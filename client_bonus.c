@@ -6,7 +6,7 @@
 /*   By: escastel <escastel@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:06:52 by escastel          #+#    #+#             */
-/*   Updated: 2023/11/15 12:51:14 by escastel         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:40:41 by escastel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	send_signal(int pid, unsigned char c)
 			kill(pid, SIGUSR1);
 		else if ((c >> i) % 2 == 0)
 			kill(pid, SIGUSR2);
-		usleep(3000);
+		usleep(1000);
 		i--;
 	}
 }

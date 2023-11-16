@@ -6,7 +6,7 @@
 /*   By: escastel <escastel@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:06:55 by escastel          #+#    #+#             */
-/*   Updated: 2023/11/16 16:35:35 by escastel         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:39:36 by escastel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	action(int signal, siginfo_t *si, void *ctx)
 		i = 0;
 		c = 0;
 	}
+	usleep(100);
 	if (signal == SIGUSR1)
 		kill(si->si_pid, SIGUSR1);
 	else if (signal == SIGUSR2)
