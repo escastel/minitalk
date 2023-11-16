@@ -6,7 +6,7 @@
 /*   By: escastel <escastel@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:06:55 by escastel          #+#    #+#             */
-/*   Updated: 2023/11/15 12:46:14 by escastel         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:35:35 by escastel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	action(int signal, siginfo_t *si, void *ctx)
 	else
 	{
 		if (c != '\0')
-			ft_printf("\x1b[0m" "%c" "\x1b[0m", c);
+			ft_printf("%c", c);
 		else
 			ft_printf("\n");
 		i = 0;
@@ -45,7 +45,7 @@ int	main(void)
 	sa.sa_sigaction = &action;
 	sa.sa_flags = SA_SIGINFO;
 	sigemptyset(&sa.sa_mask);
-	ft_printf("\x1b[33m" "The server PID is: %d\n" "\x1b[33m", getpid());
+	ft_printf("The server PID is: %d\n", getpid());
 	sigaction(SIGUSR1, &sa, NULL);
 	sigaction(SIGUSR2, &sa, NULL);
 	while (1)
